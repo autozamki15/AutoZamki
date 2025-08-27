@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auto Zamki — Dorabianie i kodowanie kluczy, naprawa stacyjek i zamków, awaryjne otwieranie samochodów | Częstochowa</title>
+  <meta name="description" content="Auto Zamki Częstochowa — mobilny ślusarz samochodowy 24/7. Dorabianie i kodowanie kluczy, naprawa stacyjek i zamków, awaryjne otwieranie aut. Dojazd na miejsce." />
+  <meta property="og:title" content="Auto Zamki — Ślusarz samochodowy 24/7 w Częstochowie" />
+  <meta property="og:description" content="Dorabianie i kodowanie kluczy, naprawa stacyjek i zamków, awaryjne otwieranie aut. Mobilny serwis 24h — Częstochowa i okolice." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lexend:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#0b1220; --card:#0f172a; --muted:#94a3b8; --text:#e2e8f0; --ink:#0b1324; --paper:#f8fafc; --accent:#0ea5e9; --accent-2:#22c55e; --ring: rgba(14,165,233,.35); --radius: 18px; --shadow: 0 10px 30px rgba(2,8,23,.18), 0 4px 12px rgba(2,8,23,.12);} *{box-sizing:border-box} html,body{margin:0;padding:0} body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;color:#0f172a;background:var(--paper)} a{color:inherit;text-decoration:none} .container{max-width:1200px;margin:0 auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.2rem;border-radius:14px;font-weight:700;border:1px solid transparent;transition:.2s background,.2s transform,.2s border,.2s box-shadow}
+    .btn:hover{transform:translateY(-1px)} .btn:focus-visible{outline:none;box-shadow:0 0 0 4px var(--ring)} .btn-primary{background:var(--accent);color:white} .btn-primary:hover{filter:brightness(1.05)} .btn-ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);color:var(--text)} .badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(34,197,94,.12);color:#065f46;border:1px solid rgba(5,150,105,.25);padding:.35rem .6rem;border-radius:999px;font-size:.85rem;font-weight:700}
+    header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.75);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #e2e8f0} nav{display:flex;align-items:center;justify-content:space-between;height:64px} .brand{display:flex;align-items:center;gap:.75rem;font-weight:800;letter-spacing:.2px} .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#38bdf8);display:grid;place-items:center;color:white;box-shadow:var(--shadow)} .nav-links{display:flex;gap:1rem;align-items:center} .nav-links a{padding:.5rem .75rem;border-radius:10px;color:#0b1324;font-weight:600} .nav-links a:hover{background:#eef2ff} .cta{display:none}
+    .hero{background:radial-gradient(1200px 600px at 50% -200px, #0ea5e950 10%, transparent 60%), var(--bg);color:var(--text);padding:64px 0 42px}
+    .hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+    .hero h1{font-family:Lexend,Inter,sans-serif;font-size: clamp(32px, 3.8vw, 56px);line-height:1.1;margin:0 0 16px}
+    .hero p{color:#cbd5e1;margin:0 0 22px;font-size:1.1rem}
+    .hero-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.18);padding:18px;border-radius:16px;box-shadow:0 10px 25px rgba(2,6,23,.22) inset}
+    .card h3{margin:6px 0 6px;font-size:1.02rem;color:#e5e7eb} .card p{margin:0;color:#cbd5e1;font-size:.95rem} .icon{width:28px;height:28px;display:inline-flex}
+    .hero-right{position:relative} .glow{position:absolute;inset:-40px -20px auto auto;filter:blur(50px);opacity:.45;pointer-events:none;background:conic-gradient(from 180deg at 50% 50%, #22c55e, #06b6d4, #0ea5e9, #22c55e);width:260px;height:260px;border-radius:50%} .hero-panel{position:relative;background:#fff;color:#0b1324;border-radius:18px;padding:22px;border:1px solid #e2e8f0;box-shadow:var(--shadow)} .hero-panel h3{margin:0 0 10px} .quick{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px} .quick a{display:flex;align-items:center;gap:.65rem;padding:.75rem;border-radius:12px;border:1px dashed #cbd5e1} .quick strong{font-size:1.1rem}
+    section{padding:64px 0} .section-title{font-family:Lexend,Inter,sans-serif;font-size: clamp(26px, 3vw, 40px);margin:0 0 14px} .section-lead{color:#475569;margin:0 0 24px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} .service{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:22px;box-shadow:var(--shadow)} .service h3{margin:10px 0 8px} .service ul{margin:10px 0 0 20px;color:#475569}
+    .why{background:linear-gradient(180deg, #ffffff, #f8fafc)} .pill{display:inline-flex;gap:.5rem;align-items:center;background:#ecfeff;border:1px solid #bae6fd;color:#075985;padding:.45rem .7rem;border-radius:999px;font-weight:700} .features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:14px} .feature{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:18px} .feature p{margin:.3rem 0 0;color:#475569}
+    .cta-section{background:linear-gradient(120deg, #0ea5e9, #22c55e);color:white;border-radius:20px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:var(--shadow)}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:18px} details{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:14px 16px} summary{cursor:pointer;font-weight:700} details p{margin:.6rem 0 0;color:#475569}
+    .contact{display:grid;grid-template-columns:1.1fr .9fr;gap:24px} form{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:18px;box-shadow:var(--shadow)} label{display:block;font-weight:700;margin:.4rem 0 .25rem} input,textarea,select{width:100%;padding:.8rem;border-radius:12px;border:1px solid #cbd5e1;font:inherit} textarea{min-height:120px} .hint{font-size:.9rem;color:#475569}
+    footer{background:var(--bg);color:var(--text);padding:40px 0} .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:22px} footer a{color:#bae6fd} .copy{color:#94a3b8;margin-top:12px}
+    @media (max-width: 980px){.hero-inner{grid-template-columns:1fr} .hero-cards{grid-template-columns:1fr 1fr} .grid-3{grid-template-columns:1fr 1fr} .features{grid-template-columns:1fr 1fr} .contact{grid-template-columns:1fr} .foot{grid-template-columns:1fr 1fr} .cta{display:flex}} @media (max-width: 640px){.hero-cards{grid-template-columns:1fr} .grid-3{grid-template-columns:1fr} .features{grid-template-columns:1fr} .foot{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="brand" aria-label="Auto Zamki — strona główna">
+          <span class="logo" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 7a5 5 0 1 1-9.9 1M21 7l-8 8-4 1-1 4-3-3 4-1 1-4 8-8"/></svg>
+          </span>
+          <span>Auto Zamki</span>
+          <span class="badge" style="margin-left:.5rem">24/7</span>
+        </a>
+        <div class="nav-links">
+          <a href="#oferta">Oferta</a>
+          <a href="#dlaczego-my">Dlaczego my</a>
+          <a href="#faq">FAQ</a>
+          <a href="#kontakt" class="btn btn-primary cta">Zadzwoń: +48 606 445 330</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="pill" aria-label="Informacja o czasie pracy">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Mobilny serwis 24h / 7 dni
+        </div>
+        <h1>Częstochowa — ślusarz samochodowy: klucze, zamki, awaryjne otwieranie</h1>
+        <p>Profesjonalnie pomagamy kierowcom: <strong>dorabiamy i kodujemy klucze</strong>, naprawiamy <strong>stacyjki i zamki</strong>, a w razie potrzeby <strong>otwieramy samochody bezinwazyjnie</strong>. Dojeżdżamy na miejsce, szybko i bezpiecznie.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+          <a class="btn btn-primary" href="tel:+48606445330" aria-label="Zadzwoń teraz">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.89.3 1.76.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.84.27 1.71.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>
+            Zadzwoń: +48 606 445 330
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/48606445330" target="_blank" rel="noopener" aria-label="Napisz na WhatsApp">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.52 3.48A11.94 11.94 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.09 1.52 5.81L0 24l6.33-1.66A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.25-6.24-3.48-8.52z"/></svg>
+            WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="#oferta">Zobacz ofertę</a>
+        </div>
+        <div class="hero-cards">
+          <div class="card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5-5 18-4-8-9-5z"/></svg>
+            <h3>Dojazd w 30–60 min*</h3>
+            <p>*W Częstochowie i okolicach; dokładny czas potwierdzimy przy zgłoszeniu.</p>
+          </div>
+          <div class="card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 1 1 10 0v4"/></svg>
+            <h3>Bez uszkodzeń</h3>
+            <p>Pracujemy metodami <em>non‑destructive</em> i chronimy Twoje auto.</p>
+          </div>
+          <div class="card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 8 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 8a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8 4.6a1.65 1.65 0 0 0 1-.33 1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09c0 .63.37 1.2.94 1.46.31.14.65.2 1 .14A2 2 0 1 1 19.4 8a1.65 1.65 0 0 0-.33 1.82c.14.31.2.65.14 1 .24.57.81.94 1.46.94H21a2 2 0 1 1 0 4h-.09c-.63 0-1.2.37-1.46.94z"/></svg>
+            <h3>Komputerowe kodowanie</h3>
+            <p>Programowanie transponderów, pilotów i immobilizerów.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="hero-panel">
+          <h3>Szybki kontakt</h3>
+          <div class="quick">
+            <a href="tel:+48606445330">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.89.3 1.76.57 2.6a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.48-1.09a2 2 0 0 1 2.11-.45c.84.27 1.71.45 2.6.57A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <strong>Telefon</strong>
+                <div class="hint">+48 606 445 330</div>
+              </div>
+            </a>
+            <a href="mailto:biuro@autozamki.pl">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+              <div>
+                <strong>E‑mail</strong>
+                <div class="hint">biuro@autozamki.pl</div>
+              </div>
+            </a>
+            <a href="https://maps.google.com/?q=Drogowc%C3%B3w%2015%2C%20Cz%C4%99stochowa" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Adres</strong>
+                <div class="hint">ul. Drogowców 15, Częstochowa</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta">
+    <div class="container">
+      <h2 class="section-title">Oferta</h2>
+      <p class="section-lead">Kompleksowe usługi ślusarstwa samochodowego — dla aut osobowych, dostawczych i motocykli.</p>
+      <div class="grid-3">
+        <div class="service">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l2-2 4 4 10-10"/></svg>
+          <h3>Dorabianie i kodowanie kluczy</h3>
+          <p>Tworzymy nowe klucze z transponderem i zdalnym sterowaniem, także gdy wszystkie zostały zgubione.</p>
+          <ul>
+            <li>Cięcie grotu wg kodu lub wzoru</li>
+            <li>Programowanie immobilizera i pilotów</li>
+            <li>Naprawy obudów i wymiana przycisków</li>
+            <li>Keyless / smart key</li>
+          </ul>
+        </div>
+        <div class="service">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v6H3z"/><path d="M7 9v12"/><path d="M17 9v12"/></svg>
+          <h3>Naprawa stacyjek i zamków</h3>
+          <p>Regeneracja mechanizmów, wymiana wkładek i dopasowanie do istniejącego klucza.</p>
+          <ul>
+            <li>Stacyjki zatarte, zablokowane, po włamaniu</li>
+            <li>Wkładki drzwi, klap, schowków</li>
+            <li>Dopasowanie zamka do klucza</li>
+          </ul>
+        </div>
+        <div class="service">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12h22"/><path d="M12 1v22"/></svg>
+          <h3>Awaryjne otwieranie samochodów</h3>
+          <p>Bez wiercenia i zniszczeń. Otwieramy auta z zatrzaśniętymi kluczami, rozładowanym akumulatorem i po kolizji.</p>
+          <ul>
+            <li>Auta osobowe i dostawcze</li>
+            <li>Systemy bezkluczykowe</li>
+            <li>Otwieranie bagażników</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dlaczego-my" class="why">
+    <div class="container">
+      <h2 class="section-title">Dlaczego warto wybrać Auto Zamki?</h2>
+      <p class="section-lead">Transparentnie, legalnie i skutecznie. Dbamy o bezpieczeństwo Twojego pojazdu i czasu.</p>
+      <div class="features">
+        <div class="feature"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/><path d="M7 10h10"/><path d="M7 14h7"/></svg> Faktura / paragon</strong><p>Pełna dokumentacja i gwarancja na usługę.</p></div>
+        <div class="feature"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4-9 4-9-4 9-4z"/><path d="M3 10l9 4 9-4"/><path d="M3 18l9 4 9-4"/></svg> Sprzęt serwisowy PRO</strong><p>Nowoczesne programatory, dekodery i narzędzia do większości marek.</p></div>
+        <div class="feature"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg> Szybki dojazd</strong><p>Mobilny serwis — przyjedziemy pod dom, pracę lub na parking.</p></div>
+        <div class="feature"><strong><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10a8 8 0 0 0-16 0c0 6 8 10 8 10z"/><circle cx="12" cy="12" r="3"/></svg> Bezpieczeństwo danych</strong><p>Odpowiedzialna praca z immobilizerami i pamięciami, zgodnie z prawem.</p></div>
+      </div>
+      <div class="container" style="margin-top:28px">
+        <div class="cta-section">
+          <div>
+            <h3 style="margin:0 0 6px">Zgubiłeś klucze? Zamek się zaciął?</h3>
+            <p style="margin:0;opacity:.95">Zadzwoń — doradzimy i podamy orientacyjny czas dojazdu.</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="tel:+48606445330">Zadzwoń teraz</a>
+            <a class="btn btn-ghost" href="mailto:biuro@autozamki.pl?subject=Zapytanie%20ze%20strony">Napisz e‑mail</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Najczęstsze pytania</h2>
+      <div class="faq">
+        <details><summary>Jak szybko możecie przyjechać?</summary><p>Najczęściej w ciągu 30–60 minut na terenie Częstochowy. Poza miastem czas zależy od odległości i ruchu — podajemy go przy zgłoszeniu.</p></details>
+        <details><summary>Czy otwarcie będzie bez uszkodzeń?</summary><p>Tak. Stosujemy metody bezinwazyjne i specjalistyczne narzędzia. Nie wiercimy, jeśli nie jest to absolutnie konieczne.</p></details>
+        <details><summary>Jakie marki obsługujecie?</summary><p>Większość popularnych marek europejskich i azjatyckich. W przypadku aut premium lub bardzo nowych modeli poprosimy o VIN i rocznik do weryfikacji.</p></details>
+        <details><summary>Co przygotować przed wizytą?</summary><p>Dokument potwierdzający własność pojazdu (np. dowód rejestracyjny) oraz lokalizację pojazdu. Jeśli masz zapasowy klucz — poinformuj nas.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container contact">
+      <div>
+        <h2 class="section-title">Kontakt i wycena</h2>
+        <p class="section-lead">Zadzwoń, napisz lub skorzystaj z formularza — odpowiemy najszybciej jak to możliwe.</p>
+        <ul class="hint" style="list-style:none;padding:0;margin:0 0 12px;display:grid;gap:6px">
+          <li><strong>Adres:</strong> Częstochowa, ul. Drogowców 15</li>
+          <li><strong>Telefon:</strong> <a href="tel:+48606445330">+48 606 445 330</a></li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/48606445330" target="_blank" rel="noopener">+48 606 445 330</a></li>
+          <li><strong>E‑mail:</strong> <a href="mailto:biuro@autozamki.pl">biuro@autozamki.pl</a></li>
+          <li><strong>Godziny pracy:</strong> Mobilny serwis 24/7</li>
+        </ul>
+        <div class="hint">Obsługujemy: Częstochowa i okolice (możliwy dojazd dalej po uzgodnieniu).</div>
+      </div>
+      <form onsubmit="sendMail(event)" aria-label="Formularz kontaktowy">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label for="name">Imię</label>
+            <input id="name" name="name" required placeholder="Jan" />
+          </div>
+          <div>
+            <label for="phone">Telefon</label>
+            <input id="phone" name="phone" required placeholder="+48 …" />
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+          <div>
+            <label for="car">Marka i model</label>
+            <input id="car" name="car" placeholder="np. VW Golf VII" />
+          </div>
+          <div>
+            <label for="year">Rocznik</label>
+            <input id="year" name="year" inputmode="numeric" placeholder="2017" />
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <label for="service">Usługa</label>
+          <select id="service" name="service">
+            <option>Dorabianie i kodowanie kluczy</option>
+            <option>Naprawa stacyjki / zamka</option>
+            <option>Awaryjne otwieranie auta</option>
+            <option>Inne</option>
+          </select>
+        </div>
+        <div style="margin-top:12px">
+          <label for="message">Opis problemu</label>
+          <textarea id="message" name="message" placeholder="Opisz krótko sytuację…"></textarea>
+        </div>
+        <div class="hint" style="margin:10px 0">Wysyłając formularz wyrażasz zgodę na kontakt w celu przygotowania wyceny.</div>
+        <button class="btn btn-primary" type="submit">Wyślij zapytanie</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <div class="brand" style="color:white">
+          <span class="logo" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7a5 5 0 1 1-9.9 1M21 7l-8 8-4 1-1 4-3-3 4-1 1-4 8-8"/></svg>
+          </span>
+          <span>Auto Zamki</span>
+        </div>
+        <p class="copy">&copy; <span id="year"></span> Auto Zamki, Częstochowa. Wszelkie prawa zastrzeżone.</p>
+      </div>
+      <div>
+        <strong>Kontakt</strong>
+        <ul style="list-style:none;padding:0;margin:10px 0 0;display:grid;gap:6px">
+          <li><a href="tel:+48606445330">+48 606 445 330</a></li>
+          <li><a href="mailto:biuro@autozamki.pl">biuro@autozamki.pl</a></li>
+          <li><a href="https://maps.google.com/?q=Drogowc%C3%B3w%2015%2C%20Cz%C4%99stochowa" target="_blank" rel="noopener">ul. Drogowców 15, Częstochowa</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Na skróty</strong>
+        <ul style="list-style:none;padding:0;margin:10px 0 0;display:grid;gap:6px">
+          <li><a href="#oferta">Oferta</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function sendMail(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const car = document.getElementById('car').value.trim();
+      const year = document.getElementById('year').value.trim();
+      const service = document.getElementById('service').value;
+      const msg = document.getElementById('message').value.trim();
+      const subject = `Zapytanie ze strony — ${service}`;
+      const body = `Imię: ${name}\nTelefon: ${phone}\nAuto: ${car} ${year}\nUsługa: ${service}\n\nOpis:\n${msg}`;
+      const mailto = `mailto:biuro@autozamki.pl?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Locksmith",
+    "name": "Auto Zamki",
+    "description": "Ślusarz samochodowy: dorabianie i kodowanie kluczy, naprawa stacyjek i zamków, awaryjne otwieranie aut.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Drogowców 15",
+      "addressLocality": "Częstochowa",
+      "addressCountry": "PL"
+    },
+    "areaServed": "Częstochowa i okolice",
+    "telephone": "+48 606 445 330",
+    "url": "https://www.autozamki.pl/",
+    "email": "biuro@autozamki.pl",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "sameAs": []
+  }
+  </script>
+</body>
+</html>
